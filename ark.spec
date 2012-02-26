@@ -6,7 +6,7 @@ Group:		Graphical desktop/KDE
 License:	LGPLv2
 URL:		http://utils.kde.org/projects/ark
 Source:		ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.bz2
-BuildRequires:	kdebase-devel >= %{version}
+BuildRequires:	kdebase4-devel >= %{version}
 BuildRequires:	qjson-devel
 BuildRequires:	kdelibs4-devel >= 2:%{version}
 BuildRequires:	libarchive-devel
