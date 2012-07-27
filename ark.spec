@@ -1,18 +1,18 @@
 Name:		ark
 Summary:	Handle file archives
-Version: 4.8.97
-Release: 1
+Version:	4.8.97
+Release:	1
 Group:		Graphical desktop/KDE
 License:	LGPLv2
 URL:		http://utils.kde.org/projects/ark
 Source:		ftp://ftp.kde.org/pub/kde/unstable/%{version}/src/%{name}-%{version}.tar.xz
-BuildRequires:	kdebase4-devel >= %{version}
-BuildRequires:	qjson-devel
-BuildRequires:	kdelibs4-devel >= 2:%{version}
-BuildRequires:	libarchive-devel
-BuildRequires:	zlib-devel
+BuildRequires:	kdebase4-devel
+BuildRequires:	kdelibs4-devel
 BuildRequires:	bzip2-devel
-BuildRequires:	liblzma-devel
+BuildRequires:	zlib-devel
+BuildRequires:	pkgconfig(QJson)
+BuildRequires:	pkgconfig(libarchive)
+BuildRequires:	pkgconfig(liblzma)
 
 Suggests:	p7zip
 Suggests:	unzip
@@ -26,20 +26,21 @@ environment.
 %{_kde_libdir}/kde4/kerfuffle_*
 %{_kde_libdir}/kde4/arkpart.so
 %{_kde_libdir}/kde4/libextracthere.so
-%{_kde_datadir}/applications/kde4/ark.desktop
+%{_kde_applicationsdir}/ark.desktop
 %{_kde_appsdir}/ark
 %{_kde_datadir}/config.kcfg/ark.kcfg
-%{_kde_datadir}/kde4/services/ark_part.desktop
-%{_kde_datadir}/kde4/services/kerfuffle_*
-%{_kde_datadir}/kde4/services/ark_dndextract.desktop
-%{_kde_datadir}/kde4/servicetypes/kerfufflePlugin.desktop
-%{_kde_datadir}/kde4/services/ServiceMenus/ark_*.desktop
+%{_kde_services}/ark_part.desktop
+%{_kde_services}/kerfuffle_*
+%{_kde_services}/ark_dndextract.desktop
+%{_kde_services}/ServiceMenus/ark_*.desktop
+%{_kde_servicetypes}/kerfufflePlugin.desktop
 %{_kde_docdir}/HTML/*/ark
 %{_kde_mandir}/man1/ark.1.*
 
 #---------------------------------------------
 
-%define libkerfuffle %mklibname kerfuffle 4
+%define libkerfuffle_major 4
+%define libkerfuffle %mklibname kerfuffle %{libkerfuffle_major}
 
 %package -n %{libkerfuffle}
 Summary:	KDE 4 library
@@ -49,7 +50,7 @@ Group:		System/Libraries
 KDE 4 library
 
 %files -n %{libkerfuffle}
-%{_kde_libdir}/libkerfuffle.so.*
+%{_kde_libdir}/libkerfuffle.so.%{libkerfuffle_major}*
 
 #---------------------------------------------
 
@@ -57,7 +58,7 @@ KDE 4 library
 Summary:	Devel stuff for %{name}
 Group:		Development/KDE and Qt
 Requires:	kdelibs4-devel
-Requires:	%{libkerfuffle} = %{version}-%{release}
+Requires:	%{libkerfuffle} = %{EVRD}
 
 %description devel
 Files needed to build applications based on %{name}.
