@@ -36,6 +36,7 @@ environment.
 %{_kde_servicetypes}/kerfufflePlugin.desktop
 %{_kde_docdir}/HTML/*/ark
 %{_kde_mandir}/man1/ark.1.*
+%{_kde_iconsdir}/hicolor/*/apps/*.*
 
 #---------------------------------------------
 
