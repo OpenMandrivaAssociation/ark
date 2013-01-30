@@ -1,11 +1,17 @@
 Name:		ark
 Summary:	Handle file archives
-Version:	4.9.4
-Release:	2
+Version:	4.9.98
+Release:	1
 Group:		Graphical desktop/KDE
 License:	LGPLv2
 URL:		http://utils.kde.org/projects/ark
-Source:		ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.xz
+%define is_beta %(if test `echo %version |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
+%if %is_beta
+%define ftpdir unstable
+%else
+%define ftpdir stable
+%endif
+Source:		ftp://ftp.kde.org/pub/kde/%ftpdir/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	kdebase4-devel
 BuildRequires:	kdelibs4-devel
 BuildRequires:	bzip2-devel
