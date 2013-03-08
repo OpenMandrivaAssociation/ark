@@ -1,25 +1,25 @@
-Name:		ark
 Summary:	Handle file archives
+Name:		ark
 Version:	4.10.0
 Release:	1
 Group:		Graphical desktop/KDE
 License:	LGPLv2
-URL:		http://utils.kde.org/projects/ark
+Url:		http://utils.kde.org/projects/ark
 %define is_beta %(if test `echo %version |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
 %else
 %define ftpdir stable
 %endif
-Source:		ftp://ftp.kde.org/pub/kde/%{ftpdir}/%{version}/src/%{name}-%{version}.tar.xz
+Source0:	ftp://ftp.kde.org/pub/kde/%{ftpdir}/%{version}/src/%{name}-%{version}.tar.xz
+
 BuildRequires:	kdebase4-devel
 BuildRequires:	kdelibs4-devel
 BuildRequires:	bzip2-devel
-BuildRequires:	zlib-devel
 BuildRequires:	pkgconfig(QJson)
 BuildRequires:	pkgconfig(libarchive)
 BuildRequires:	pkgconfig(liblzma)
-
+BuildRequires:	pkgconfig(zlib)
 Suggests:	p7zip
 Suggests:	unzip
 
@@ -84,71 +84,4 @@ Files needed to build applications based on %{name}.
 
 %install
 %makeinstall_std -C build
-
-%changelog
-* Thu Feb 07 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.10.0-1
-- New version 4.10.0
-
-* Wed Dec 05 2012 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.9.4-1
-- New version 4.9.4
-
-* Wed Nov 07 2012 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.9.3-1
-- New version 4.9.3
-
-* Thu Oct 04 2012 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.9.2-1
-- New version 4.9.2
-
-* Sat Sep 08 2012 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.9.1-1
-- New version 4.9.1
-
-* Mon Aug 13 2012 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.9.0-1
-- New version 4.9.0
-- Update file list
-
-* Thu Jul 19 2012 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.8.97-1
-- New version 4.8.97
-- Make better use of KDE path macros
-- Convert BuildRequires to pkgconfig style
-
-* Mon Jul 02 2012 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.8.95-1
-- New version 4.8.95
-
-* Fri Jun 08 2012 Arkady L. Shane <arkady.shane@rosalab.ru> 4.8.4-1
-- update to 4.8.4
-
-* Thu May 10 2012 Arkady L. Shane <arkady.shane@rosalab.ru> 4.8.3-1
-- update to 4.8.3
-
-* Sun Mar 11 2012 Arkady L. Shane <arkady.shane@rosalab.ru> 4.8.2-1
-- update to 4.8.2
-
-* Sun Mar 11 2012 Arkady L. Shane <arkady.shane@rosalab.ru>
-- update to 
-* Sun Mar 11 2012 Arkady L. Shane <arkady.shane@rosalab.ru> 4.8.1-1
-- update to 4.8.1
-
-* Sun Feb 26 2012 Andrey Bondrov <abondrov@mandriva.org> 4.8.0-2
-+ Revision: 780808
-- Add kdebase-devel and qjson-devel to BuildRequires, update file list
-
-* Thu Jan 19 2012 Nicolas Lécureuil <nlecureuil@mandriva.com> 4.8.0-1
-+ Revision: 762440
-- New upstream tarball
-
-* Fri Jan 06 2012 Nicolas Lécureuil <nlecureuil@mandriva.com> 4.7.97-1
-+ Revision: 758031
-- New upstream tarball
-
-* Thu Dec 22 2011 Nicolas Lécureuil <nlecureuil@mandriva.com> 4.7.95-1
-+ Revision: 744507
-- New upstream tarball
-
-* Fri Dec 09 2011 Nicolas Lécureuil <nlecureuil@mandriva.com> 4.7.90-1
-+ Revision: 739343
-- New upstream tarball
-
-* Thu Nov 24 2011 Nicolas Lécureuil <nlecureuil@mandriva.com> 4.7.80-1
-+ Revision: 733003
-- Import Ark
-- Create folder
 
