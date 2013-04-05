@@ -1,6 +1,6 @@
 Summary:	Handle file archives
 Name:		ark
-Version:	4.10.1
+Version:	4.10.2
 Release:	1
 Group:		Graphical desktop/KDE
 License:	LGPLv2
@@ -54,7 +54,7 @@ Summary:	KDE 4 library
 Group:		System/Libraries
 
 %description -n %{libkerfuffle}
-KDE 4 library
+KDE 4 library.
 
 %files -n %{libkerfuffle}
 %{_kde_libdir}/libkerfuffle.so.%{libkerfuffle_major}*
@@ -86,6 +86,9 @@ Files needed to build applications based on %{name}.
 %makeinstall_std -C build
 
 %changelog
+* Wed Apr 03 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.10.2-1
+- New version 4.10.2
+
 * Sat Mar 09 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.10.1-1
 - New version 4.10.1
 
