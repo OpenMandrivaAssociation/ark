@@ -1,6 +1,6 @@
 Summary:	Handle file archives
 Name:		ark
-Version:	4.10.5
+Version:	4.11.0
 Release:	1
 Group:		Graphical desktop/KDE
 License:	LGPLv2
@@ -85,6 +85,9 @@ Files needed to build applications based on %{name}.
 %makeinstall_std -C build
 
 %changelog
+* Wed Aug 14 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.11.0-1
+- New version 4.11.0
+
 * Wed Jul 03 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.10.5-1
 - New version 4.10.5
 
