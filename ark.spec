@@ -2,8 +2,8 @@ Summary:	Handle file archives
 Name:		ark
 Version:	4.14.1
 Release:	1
+License:	LGPLv2+
 Group:		Graphical desktop/KDE
-License:	LGPLv2
 Url:		http://utils.kde.org/projects/ark
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
@@ -12,9 +12,9 @@ Url:		http://utils.kde.org/projects/ark
 %define ftpdir stable
 %endif
 Source0:	ftp://ftp.kde.org/pub/kde/%{ftpdir}/%{version}/src/%{name}-%{version}.tar.xz
+BuildRequires:	bzip2-devel
 BuildRequires:	kdebase4-devel
 BuildRequires:	kdelibs4-devel
-BuildRequires:	bzip2-devel
 BuildRequires:	pkgconfig(QJson)
 BuildRequires:	pkgconfig(libarchive)
 BuildRequires:	pkgconfig(liblzma)
@@ -33,6 +33,7 @@ environment.
 %{_kde_libdir}/kde4/libextracthere.so
 %{_kde_applicationsdir}/ark.desktop
 %{_kde_appsdir}/ark
+%{_kde_datadir}/appdata/ark.appdata.xml
 %{_kde_datadir}/config.kcfg/ark.kcfg
 %{_kde_iconsdir}/hicolor/*/apps/ark*
 %{_kde_services}/ark_part.desktop
@@ -87,6 +88,7 @@ Files needed to build applications based on %{name}.
 %changelog
 * Mon Sep 29 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.14.1-1
 - New version 4.14.1
+- Update files
 
 * Tue Jul 15 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.13.3-1
 - New version 4.13.3
