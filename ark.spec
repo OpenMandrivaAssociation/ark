@@ -2,14 +2,13 @@
 
 Summary:	Handle file archives
 Name:		ark
-Version:	14.12.3
+Version:	15.03.97
 Release:	1
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://utils.kde.org/projects/ark
 Source0:	ftp://ftp.kde.org/pub/kde/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	bzip2-devel
-BuildRequires:	kdebase4-devel
 BuildRequires:	kdelibs4-devel
 BuildRequires:	pkgconfig(QJson)
 BuildRequires:	pkgconfig(libarchive)
