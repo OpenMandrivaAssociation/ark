@@ -2,18 +2,36 @@
 
 Summary:	Handle file archives
 Name:		ark
-Version:	15.04.3
-Release:	2
+Version:	15.08.0
+Release:	1
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://utils.kde.org/projects/ark
 Source0:	ftp://ftp.kde.org/pub/kde/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	bzip2-devel
-BuildRequires:	kde-baseapps-devel
+BuildRequires:	cmake
+BuildRequires:	ninja
 BuildRequires:	pkgconfig(QJson)
 BuildRequires:	pkgconfig(libarchive)
 BuildRequires:	pkgconfig(liblzma)
 BuildRequires:	pkgconfig(zlib)
+BuildRequires:	cmake(ECM)
+BuildRequires:	cmake(KF5Archive)
+BuildRequires:	cmake(KF5Config)
+BuildRequires:	cmake(KF5ConfigWidgets)
+BuildRequires:	cmake(KF5CoreAddons)
+BuildRequires:	cmake(KF5DBusAddons)
+BuildRequires:	cmake(KF5I18n)
+BuildRequires:	cmake(KF5IconThemes)
+BuildRequires:	cmake(KF5JobWidgets)
+BuildRequires:	cmake(KF5KHtml)
+BuildRequires:	cmake(KF5KIO)
+BuildRequires:	cmake(KF5Parts)
+BuildRequires:	cmake(KF5Service)
+BuildRequires:	cmake(KF5WidgetsAddons)
+BuildRequires:	cmake(KF5XmlGui)
+BuildRequires:	cmake(Qt5Core)
+BuildRequires:	cmake(Qt5Widgets)
 Suggests:	p7zip
 Suggests:	unzip
 
@@ -22,26 +40,25 @@ Ark is a program for managing various archive formats within the KDE
 environment.
 
 %files
-%{_kde_bindir}/ark
-%{_kde_libdir}/kde4/kerfuffle_*
-%{_kde_libdir}/kde4/arkpart.so
-%{_kde_libdir}/kde4/libextracthere.so
-%{_kde_applicationsdir}/ark.desktop
-%{_kde_appsdir}/ark
-%{_kde_datadir}/appdata/ark.appdata.xml
-%{_kde_datadir}/config.kcfg/ark.kcfg
-%{_kde_iconsdir}/hicolor/*/apps/ark*
-%{_kde_services}/ark_part.desktop
-%{_kde_services}/kerfuffle_*
-%{_kde_services}/ark_dndextract.desktop
-%{_kde_services}/ServiceMenus/ark_*.desktop
-%{_kde_servicetypes}/kerfufflePlugin.desktop
-%{_kde_docdir}/HTML/*/ark
-%{_kde_mandir}/man1/ark.1.*
+%config %{_sysconfdir}/xdg/ark.categories
+%{_bindir}/ark
+%{_libdir}/qt5/plugins/kerfuffle_*
+%{_libdir}/qt5/plugins/arkpart.so
+%{_libdir}/qt5/plugins/kf5/kio_dnd/extracthere.so
+%{_datadir}/applications/org.kde.ark.desktop
+%{_datadir}/kservices5/*.desktop
+%{_datadir}/kservices5/ServiceMenus/*.desktop
+%{_datadir}/kservicetypes5/kerfufflePlugin.desktop
+%{_datadir}/kxmlgui5/ark
+%{_datadir}/appdata/ark.appdata.xml
+%{_datadir}/config.kcfg/ark.kcfg
+%{_datadir}/icons/*/*/apps/ark.*
+%{_mandir}/man1/ark.1*
+%doc %{_docdir}/HTML/en/ark
 
 #---------------------------------------------
 
-%define libkerfuffle_major 4
+%define libkerfuffle_major 15
 %define libkerfuffle %mklibname kerfuffle %{libkerfuffle_major}
 
 %package -n %{libkerfuffle}
@@ -74,8 +91,8 @@ Files needed to build applications based on %{name}.
 %setup -q
 
 %build
-%cmake_kde4
-%make
+%cmake_kde5
+%ninja
 
 %install
-%makeinstall_std -C build
+%ninja_install -C build
