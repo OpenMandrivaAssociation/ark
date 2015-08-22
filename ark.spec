@@ -72,7 +72,7 @@ Group:		System/Libraries
 KDE 4 library.
 
 %files -n %{libkerfuffle}
-%{_kde_libdir}/libkerfuffle.so.%{libkerfuffle_major}*
+%{_libdir}/libkerfuffle.so.%{libkerfuffle_major}*
 
 #---------------------------------------------
 
@@ -86,7 +86,7 @@ Requires:	%{libkerfuffle} = %{EVRD}
 Files needed to build applications based on %{name}.
 
 %files devel
-%{_kde_libdir}/libkerfuffle.so
+%{_libdir}/libkerfuffle.so
 
 #----------------------------------------------------------------------
 
