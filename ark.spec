@@ -2,7 +2,7 @@
 
 Summary:	Handle file archives
 Name:		ark
-Version:	15.08.3
+Version:	15.12.0
 Release:	1
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
