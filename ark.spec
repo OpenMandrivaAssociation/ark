@@ -55,7 +55,6 @@ environment.
 %{_datadir}/kservices5/ServiceMenus/*.desktop
 %{_datadir}/kservicetypes5/kerfufflePlugin.desktop
 %{_datadir}/kxmlgui5/ark
-%{_datadir}/appdata/ark.appdata.xml
 %{_datadir}/config.kcfg/ark.kcfg
 %{_datadir}/icons/*/*/apps/ark.*
 %{_mandir}/man1/ark.1*
@@ -81,14 +80,13 @@ KDE 4 library.
 %package devel
 Summary:	Devel stuff for %{name}
 Group:		Development/KDE and Qt
-Requires:	kdelibs4-devel
 Requires:	%{libkerfuffle} = %{EVRD}
 
 %description devel
 Files needed to build applications based on %{name}.
 
 %files devel
-%{_libdir}/libkerfuffle.so
+# (tpg) no files here?
 
 #----------------------------------------------------------------------
 
