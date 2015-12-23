@@ -49,6 +49,7 @@ environment.
 %{_libdir}/qt5/plugins/kerfuffle_*
 %{_libdir}/qt5/plugins/arkpart.so
 %{_libdir}/qt5/plugins/kf5/kio_dnd/extracthere.so
+%{_datadir}/appdata/org.kde.ark.appdata.xml
 %{_datadir}/applications/org.kde.ark.desktop
 %{_datadir}/kservices5/*.desktop
 %{_datadir}/kservices5/ServiceMenus/*.desktop
