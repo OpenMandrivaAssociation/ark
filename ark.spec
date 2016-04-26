@@ -2,12 +2,12 @@
 
 Summary:	Handle file archives
 Name:		ark
-Version:	15.12.3
+Version:	16.04.0
 Release:	1
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://utils.kde.org/projects/ark
-Source0:	ftp://ftp.kde.org/pub/kde/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
+Source0:	http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	bzip2-devel
 BuildRequires:	cmake
 BuildRequires:	ninja
@@ -46,7 +46,7 @@ environment.
 %files
 %config %{_sysconfdir}/xdg/ark.categories
 %{_bindir}/ark
-%{_libdir}/qt5/plugins/kerfuffle_*
+%{_libdir}/qt5/plugins/kerfuffle
 %{_libdir}/qt5/plugins/arkpart.so
 %{_libdir}/qt5/plugins/kf5/kio_dnd/extracthere.so
 %{_datadir}/appdata/org.kde.ark.appdata.xml
@@ -62,7 +62,7 @@ environment.
 
 #---------------------------------------------
 
-%define libkerfuffle_major 15
+%define libkerfuffle_major 16
 %define libkerfuffle %mklibname kerfuffle %{libkerfuffle_major}
 
 %package -n %{libkerfuffle}
