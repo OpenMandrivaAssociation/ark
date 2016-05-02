@@ -36,6 +36,7 @@ BuildRequires:	cmake(KF5Crash)
 BuildRequires:	cmake(Qt5Core)
 BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	cmake(Qt5Test)
+BuildRequires:	cmake(Qt5Concurrent)
 Suggests:	p7zip
 Suggests:	unzip
 
