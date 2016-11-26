@@ -9,8 +9,6 @@ Group:		Graphical desktop/KDE
 Url:		http://utils.kde.org/projects/ark
 Source0:	http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	bzip2-devel
-BuildRequires:	cmake
-BuildRequires:	ninja
 BuildRequires:	pkgconfig(QJson)
 BuildRequires:	pkgconfig(libarchive)
 BuildRequires:	pkgconfig(liblzma)
@@ -49,13 +47,14 @@ environment.
 %{_bindir}/ark
 %{_libdir}/qt5/plugins/kerfuffle
 %{_libdir}/qt5/plugins/arkpart.so
-%{_libdir}/qt5/plugins/kf5/kio_dnd/extracthere.so
-%{_datadir}/appdata/org.kde.ark.appdata.xml
+%{_libdir}/qt5/plugins/kf5/kio_dnd/*.so
+%{_libdir}/qt5/plugins/kf5/kfileitemaction/*.so
+%{_datadir}/metainfo/org.kde.ark.appdata.xml
 %{_datadir}/applications/org.kde.ark.desktop
 %{_datadir}/kservices5/*.desktop
-%{_datadir}/kservices5/ServiceMenus/*.desktop
 %{_datadir}/kservicetypes5/kerfufflePlugin.desktop
 %{_datadir}/kxmlgui5/ark
+%{_datadir}/mime/packages/kerfuffle.xml
 %{_datadir}/config.kcfg/ark.kcfg
 %{_datadir}/icons/*/*/apps/ark.*
 %{_mandir}/man1/ark.1*
@@ -71,7 +70,7 @@ Summary:	KDE 4 library
 Group:		System/Libraries
 
 %description -n %{libkerfuffle}
-KDE 4 library.
+%{name} library.
 
 %files -n %{libkerfuffle}
 %{_libdir}/libkerfuffle.so.%{libkerfuffle_major}*
@@ -93,10 +92,10 @@ Files needed to build applications based on %{name}.
 
 %prep
 %setup -q
+%cmake_kde5
 
 %build
-%cmake_kde5
-%ninja
+%ninja -C build
 
 %install
 %ninja_install -C build
