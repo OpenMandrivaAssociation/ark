@@ -2,7 +2,7 @@
 
 Summary:	Handle file archives
 Name:		ark
-Version:	16.12.2
+Version:	17.03.80
 Release:	1
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
@@ -63,11 +63,11 @@ environment.
 
 #---------------------------------------------
 
-%define libkerfuffle_major 16
+%define libkerfuffle_major 17
 %define libkerfuffle %mklibname kerfuffle %{libkerfuffle_major}
 
 %package -n %{libkerfuffle}
-Summary:	KDE 4 library
+Summary:	KDE archiving library
 Group:		System/Libraries
 
 %description -n %{libkerfuffle}
