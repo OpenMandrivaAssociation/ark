@@ -2,7 +2,7 @@
 
 Summary:	Handle file archives
 Name:		ark
-Version:	17.04.3
+Version:	17.07.90
 Release:	1
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
