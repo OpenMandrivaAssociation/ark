@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   ark-17.12.1.tar.xz: 3bc6cf9fc6d2cf1cf5515f4a75ef59c22ea0649b
+sources:
+  ark-17.12.2.tar.xz: f8b9f8cd192e3cf5648d18128b978153f1b359b5
