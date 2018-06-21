@@ -2,7 +2,7 @@
 
 Summary:	Handle file archives
 Name:		ark
-Version:	 17.12.2
+Version:	 18.04.2
 Release:	1
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
@@ -15,6 +15,9 @@ BuildRequires:	pkgconfig(liblzma)
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:	pkgconfig(shared-mime-info)
 BuildRequires:	cmake(ECM)
+BuildRequires:	cmake(Qt5Test)
+BuildRequires:	cmake(KF5Crash)
+BuildRequires:	cmake(KF5ItemModels)
 BuildRequires:	cmake(KF5Archive)
 BuildRequires:	cmake(KF5Config)
 BuildRequires:	cmake(KF5ConfigWidgets)
@@ -56,7 +59,6 @@ environment.
 %{_datadir}/kservices5/*.desktop
 %{_datadir}/kservicetypes5/kerfufflePlugin.desktop
 %{_datadir}/kxmlgui5/ark
-%{_datadir}/mime/packages/kerfuffle.xml
 %{_datadir}/config.kcfg/ark.kcfg
 %{_datadir}/icons/*/*/apps/ark.*
 %{_mandir}/man1/ark.1*
@@ -90,12 +92,14 @@ environment.
 
 #---------------------------------------------
 
-%define libkerfuffle_major 17
+%define libkerfuffle_major 18
 %define libkerfuffle %mklibname kerfuffle %{libkerfuffle_major}
+%define oldlibkerfuffle %mklibname kerfuffle 17
 
 %package -n %{libkerfuffle}
 Summary:	KDE archiving library
 Group:		System/Libraries
+Obsoletes:	%{oldlibkerfuffle} < %{EVRD}
 
 %description -n %{libkerfuffle}
 %{name} library.
