@@ -2,7 +2,7 @@
 
 Summary:	Handle file archives
 Name:		ark
-Version:	 18.08.3
+Version:	 18.11.80
 Release:	1
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
@@ -55,6 +55,7 @@ environment.
 %{_libdir}/qt5/plugins/kf5/kio_dnd/*.so
 %{_libdir}/qt5/plugins/kf5/kfileitemaction/*.so
 %{_datadir}/metainfo/org.kde.ark.appdata.xml
+%{_datadir}/mime/packages/kerfuffle.xml
 %{_datadir}/applications/org.kde.ark.desktop
 %{_datadir}/kservices5/*.desktop
 %{_datadir}/kservicetypes5/kerfufflePlugin.desktop
