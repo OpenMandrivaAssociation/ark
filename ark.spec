@@ -2,8 +2,8 @@
 
 Summary:	Handle file archives
 Name:		ark
-Version:	 18.12.3
-Release:	2
+Version:	 19.04.0
+Release:	1
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://utils.kde.org/projects/ark
@@ -93,13 +93,15 @@ environment.
 
 #---------------------------------------------
 
-%define libkerfuffle_major 18
+%define libkerfuffle_major %(echo %{version} |cut -d. -f1)
 %define libkerfuffle %mklibname kerfuffle %{libkerfuffle_major}
-%define oldlibkerfuffle %mklibname kerfuffle 17
+%define oldlibkerfuffle17 %mklibname kerfuffle 17
+%define oldlibkerfuffle %mklibname kerfuffle 18
 
 %package -n %{libkerfuffle}
 Summary:	KDE archiving library
 Group:		System/Libraries
+Obsoletes:	%{oldlibkerfuffle17} < %{EVRD}
 Obsoletes:	%{oldlibkerfuffle} < %{EVRD}
 
 %description -n %{libkerfuffle}
