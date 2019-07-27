@@ -2,7 +2,7 @@
 
 Summary:	Handle file archives
 Name:		ark
-Version:	19.04.3
+Version:	19.07.80
 Release:	1
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
@@ -48,7 +48,7 @@ Ark is a program for managing various archive formats within the KDE
 environment.
 
 %files -f ark.lang
-%config %{_sysconfdir}/xdg/ark.categories
+%{_datadir}/qlogging-categories5/ark.categories
 %{_bindir}/ark
 %{_libdir}/qt5/plugins/kerfuffle
 %{_libdir}/qt5/plugins/arkpart.so
