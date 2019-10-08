@@ -2,7 +2,7 @@
 
 Summary:	Handle file archives
 Name:		ark
-Version:	19.08.1
+Version:	19.08.2
 Release:	1
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
