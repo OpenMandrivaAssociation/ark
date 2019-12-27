@@ -2,12 +2,12 @@
 
 Summary:	Handle file archives
 Name:		ark
-Version:	19.11.90
+Version:	19.12.0
 Release:	1
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://utils.kde.org/projects/ark
-Source0:	http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
+Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	bzip2-devel
 BuildRequires:	pkgconfig(QJson)
 BuildRequires:	pkgconfig(libarchive)
