@@ -8,6 +8,7 @@ License:	LGPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://utils.kde.org/projects/ark
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
+Patch0:		ark-20.03.90-compile.patch
 BuildRequires:	bzip2-devel
 BuildRequires:	pkgconfig(QJson)
 BuildRequires:	pkgconfig(libarchive)
@@ -125,7 +126,7 @@ Files needed to build applications based on %{name}.
 #----------------------------------------------------------------------
 
 %prep
-%setup -q
+%autosetup -p1
 %cmake_kde5
 
 %build

@@ -1,0 +1,12 @@
+diff -up ark-20.03.90/kerfuffle/createdialog.cpp.omv~ ark-20.03.90/kerfuffle/createdialog.cpp
+--- ark-20.03.90/kerfuffle/createdialog.cpp.omv~	2020-04-11 21:42:42.916780556 +0200
++++ ark-20.03.90/kerfuffle/createdialog.cpp	2020-04-11 21:42:47.758840774 +0200
+@@ -85,7 +85,7 @@ CreateDialog::CreateDialog(QWidget *pare
+     connect(m_ui->buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
+     connect(m_ui->buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
+     connect(this, &QDialog::accepted, this, &CreateDialog::slotUpdateDefaultMimeType);
+-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
++#if QT_VERSION <= QT_VERSION_CHECK(5, 15, 0)
+     connect(m_ui->mimeComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &CreateDialog::slotUpdateWidgets);
+     connect(m_ui->mimeComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &CreateDialog::slotUpdateFilenameExtension);
+ #else
