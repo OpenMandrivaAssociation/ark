@@ -2,13 +2,12 @@
 
 Summary:	Handle file archives
 Name:		ark
-Version:	20.03.90
-Release:	2
+Version:	20.04.0
+Release:	1
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://utils.kde.org/projects/ark
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
-Patch0:		ark-20.03.90-compile.patch
 BuildRequires:	bzip2-devel
 BuildRequires:	pkgconfig(QJson)
 BuildRequires:	pkgconfig(libarchive)
