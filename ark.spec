@@ -3,12 +3,12 @@
 Summary:	Handle file archives
 Name:		ark
 Version:	20.11.90
-Release:	1
+Release:	2
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://utils.kde.org/projects/ark
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
-BuildRequires:	bzip2-devel
+BuildRequires:	pkgconfig(bzip2)
 BuildRequires:	pkgconfig(QJson)
 BuildRequires:	pkgconfig(libarchive)
 BuildRequires:	pkgconfig(liblzma)
@@ -40,6 +40,7 @@ BuildRequires:	cmake(Qt5Core)
 BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	cmake(Qt5Test)
 BuildRequires:	cmake(Qt5Concurrent)
+BuildRequires:	cmake(libzip)
 Suggests:	p7zip
 Suggests:	unzip
 
