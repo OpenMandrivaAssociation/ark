@@ -2,7 +2,7 @@
 
 Summary:	Handle file archives
 Name:		ark
-Version:	20.12.3
+Version:	21.03.80
 Release:	1
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
@@ -59,7 +59,6 @@ environment.
 %{_datadir}/applications/org.kde.ark.desktop
 %{_datadir}/kservices5/*.desktop
 %{_datadir}/kservicetypes5/kerfufflePlugin.desktop
-%{_datadir}/kxmlgui5/ark
 %{_datadir}/config.kcfg/ark.kcfg
 %{_datadir}/icons/*/*/apps/ark.*
 %{_mandir}/man1/ark.1*
