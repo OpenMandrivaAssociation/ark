@@ -2,7 +2,7 @@
 
 Summary:	Handle file archives
 Name:		ark
-Version:	21.04.2
+Version:	21.07.80
 Release:	1
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
@@ -52,7 +52,7 @@ environment.
 %{_datadir}/qlogging-categories5/ark.categories
 %{_bindir}/ark
 %{_libdir}/qt5/plugins/kerfuffle
-%{_libdir}/qt5/plugins/arkpart.so
+%{_libdir}/qt5/plugins/kf5/parts/arkpart.so
 %{_libdir}/qt5/plugins/kf5/kio_dnd/*.so
 %{_libdir}/qt5/plugins/kf5/kfileitemaction/*.so
 %{_datadir}/metainfo/org.kde.ark.appdata.xml
