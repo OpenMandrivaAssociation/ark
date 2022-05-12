@@ -2,7 +2,7 @@
 
 Summary:	Handle file archives
 Name:		ark
-Version:	22.04.0
+Version:	22.04.1
 Release:	1
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
@@ -62,33 +62,6 @@ environment.
 %{_datadir}/config.kcfg/ark.kcfg
 %{_datadir}/icons/*/*/apps/ark.*
 %{_mandir}/man1/ark.1*
-%lang(ca) %{_mandir}/ca/man1/ark.1*
-%lang(de) %{_mandir}/de/man1/ark.1*
-%lang(es) %{_mandir}/es/man1/ark.1*
-%lang(fr) %{_mandir}/fr/man1/ark.1*
-%lang(gl) %{_mandir}/gl/man1/ark.1*
-%lang(it) %{_mandir}/it/man1/ark.1*
-%lang(nl) %{_mandir}/nl/man1/ark.1*
-%lang(pt) %{_mandir}/pt/man1/ark.1*
-%lang(pt_BR) %{_mandir}/pt_BR/man1/ark.1*
-%lang(sr) %{_mandir}/sr/man1/ark.1*
-%lang(sv) %{_mandir}/sv/man1/ark.1*
-%lang(uk) %{_mandir}/uk/man1/ark.1*
-%doc %{_docdir}/HTML/en/ark
-%lang(de) %doc %{_docdir}/HTML/de/ark
-%lang(es) %doc %{_docdir}/HTML/es/ark
-%lang(et) %doc %{_docdir}/HTML/et/ark
-%lang(fr) %doc %{_docdir}/HTML/fr/ark
-%lang(gl) %doc %{_docdir}/HTML/gl/ark
-%lang(it) %doc %{_docdir}/HTML/it/ark
-%lang(nl) %doc %{_docdir}/HTML/nl/ark
-%lang(pl) %doc %{_docdir}/HTML/pl/ark
-%lang(pt) %doc %{_docdir}/HTML/pt/ark
-%lang(pt_BR) %doc %{_docdir}/HTML/pt_BR/ark
-%lang(ru) %doc %{_docdir}/HTML/ru/ark
-%lang(sr) %doc %{_docdir}/HTML/sr/ark
-%lang(sv) %doc %{_docdir}/HTML/sv/ark
-%lang(uk) %doc %{_docdir}/HTML/uk/ark
 
 #---------------------------------------------
 
@@ -133,4 +106,4 @@ Files needed to build applications based on %{name}.
 
 %install
 %ninja_install -C build
-%find_lang ark
+%find_lang ark --with-man --with-html
