@@ -2,7 +2,7 @@
 
 Summary:	Handle file archives
 Name:		ark
-Version:	22.08.3
+Version:	22.12.0
 Release:	1
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
@@ -57,11 +57,12 @@ environment.
 %{_libdir}/qt5/plugins/kf5/kfileitemaction/*.so
 %{_datadir}/metainfo/org.kde.ark.appdata.xml
 %{_datadir}/applications/org.kde.ark.desktop
-%{_datadir}/kservices5/*.desktop
-%{_datadir}/kservicetypes5/kerfufflePlugin.desktop
 %{_datadir}/config.kcfg/ark.kcfg
 %{_datadir}/icons/*/*/apps/ark.*
 %{_mandir}/man1/ark.1*
+%{_sysconfdir}/xdg/arkrc
+%{_datadir}/kconf_update/ark.upd
+%{_datadir}/kconf_update/ark_add_hamburgermenu_to_toolbar.sh
 
 #---------------------------------------------
 
