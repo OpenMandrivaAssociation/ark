@@ -2,7 +2,7 @@
 
 Summary:	Handle file archives
 Name:		ark
-Version:	22.12.2
+Version:	22.12.3
 Release:	1
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
