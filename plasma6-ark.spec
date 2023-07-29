@@ -45,6 +45,7 @@ BuildRequires:	cmake(Qt6Widgets)
 BuildRequires:	cmake(Qt6Test)
 BuildRequires:	cmake(Qt6Concurrent)
 BuildRequires:	cmake(libzip)
+BuildRequires:	plasma6-xdg-desktop-portal-kde
 Suggests:	p7zip
 Suggests:	unzip
 
