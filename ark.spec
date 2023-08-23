@@ -2,8 +2,8 @@
 
 Summary:	Handle file archives
 Name:		ark
-Version:	23.04.3
-Release:	2
+Version:	23.08.0
+Release:	1
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://utils.kde.org/projects/ark
@@ -43,6 +43,16 @@ BuildRequires:	cmake(Qt5Concurrent)
 BuildRequires:	cmake(libzip)
 Suggests:	p7zip
 Suggests:	unzip
+# There's no point in having a separate libpackage for an application
+# specific library that doesn't have headers, so let's stop splitting it
+%define libkerfuffle_major %(echo %{version} |cut -d. -f1)
+%define libkerfuffle %mklibname kerfuffle %{libkerfuffle_major}
+%define oldlibkerfuffle17 %mklibname kerfuffle 17
+%define oldlibkerfuffle %mklibname kerfuffle 18
+Obsoletes:	%{libkerfuffle} < %{EVRD}
+Obsoletes:	%{oldlibkerfuffle17} < %{EVRD}
+Obsoletes:	%{oldlibkerfuffle} < %{EVRD}
+Obsoletes:	%{name}-devel < %{EVRD}
 
 %description
 Ark is a program for managing various archive formats within the KDE
@@ -63,38 +73,8 @@ environment.
 %{_sysconfdir}/xdg/arkrc
 %{_datadir}/kconf_update/ark.upd
 %{_datadir}/kconf_update/ark_add_hamburgermenu_to_toolbar.sh
-
-#---------------------------------------------
-
-%define libkerfuffle_major %(echo %{version} |cut -d. -f1)
-%define libkerfuffle %mklibname kerfuffle %{libkerfuffle_major}
-%define oldlibkerfuffle17 %mklibname kerfuffle 17
-%define oldlibkerfuffle %mklibname kerfuffle 18
-
-%package -n %{libkerfuffle}
-Summary:	KDE archiving library
-Group:		System/Libraries
-Obsoletes:	%{oldlibkerfuffle17} < %{EVRD}
-Obsoletes:	%{oldlibkerfuffle} < %{EVRD}
-
-%description -n %{libkerfuffle}
-%{name} library.
-
-%files -n %{libkerfuffle}
 %{_libdir}/libkerfuffle.so.%{libkerfuffle_major}*
-
-#---------------------------------------------
-
-%package devel
-Summary:	Devel stuff for %{name}
-Group:		Development/KDE and Qt
-Requires:	%{libkerfuffle} = %{EVRD}
-
-%description devel
-Files needed to build applications based on %{name}.
-
-%files devel
-# (tpg) no files here?
+%{_datadir}/kservices5/ark_part.desktop
 
 #----------------------------------------------------------------------
 
