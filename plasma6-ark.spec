@@ -1,5 +1,5 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
-%define git 20230902
+%define git 20230909
 
 Summary:	Handle file archives
 Name:		plasma6-ark
