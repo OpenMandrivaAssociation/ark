@@ -2,13 +2,12 @@
 
 Summary:	Handle file archives
 Name:		ark
-Version:	23.08.2
+Version:	23.08.3
 Release:	1
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://utils.kde.org/projects/ark
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
-Patch0:		https://invent.kde.org/utilities/ark/-/commit/9bcbcb056c43abef88540c54f25bc6c1a78c7c0e.patch
 BuildRequires:	pkgconfig(bzip2)
 BuildRequires:	pkgconfig(QJson)
 BuildRequires:	pkgconfig(libarchive)
