@@ -3,7 +3,7 @@
 
 Summary:	Handle file archives
 Name:		plasma6-ark
-Version:	24.01.75
+Version:	24.01.80
 Release:	%{?git:0.%{git}.}1
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
