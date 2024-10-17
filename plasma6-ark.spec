@@ -9,7 +9,7 @@ Version:	24.08.2
 Release:	%{?git:0.%{git}.}1
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
-Url:		http://utils.kde.org/projects/ark
+Url:		https://utils.kde.org/projects/ark
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/utilities/ark/-/archive/%{gitbranch}/ark-%{gitbranchd}.tar.bz2#/ark-%{git}.tar.bz2
 %else
