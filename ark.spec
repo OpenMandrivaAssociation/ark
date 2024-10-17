@@ -6,7 +6,7 @@ Version:	23.08.5
 Release:	2
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
-Url:		http://utils.kde.org/projects/ark
+Url:		https://utils.kde.org/projects/ark
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	pkgconfig(bzip2)
 BuildRequires:	pkgconfig(QJson)
