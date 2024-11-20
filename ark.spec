@@ -3,7 +3,7 @@
 Summary:	Handle file archives
 Name:		ark
 Version:	23.08.5
-Release:	2
+Release:	3
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://utils.kde.org/projects/ark
