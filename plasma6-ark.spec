@@ -6,7 +6,7 @@
 Summary:	Handle file archives
 Name:		plasma6-ark
 Version:	24.12.3
-Release:	%{?git:0.%{git}.}2
+Release:	%{?git:0.%{git}.}3
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://utils.kde.org/projects/ark
