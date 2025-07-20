@@ -5,7 +5,7 @@
 
 Summary:	Handle file archives
 Name:		ark
-Version:	25.04.0
+Version:	25.04.3
 Release:	%{?git:0.%{git}.}1
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
@@ -49,8 +49,11 @@ BuildRequires:	cmake(Qt6Test)
 BuildRequires:	cmake(Qt6Concurrent)
 BuildRequires:	cmake(libzip)
 BuildRequires:	plasma6-xdg-desktop-portal-kde
-Suggests:	p7zip
+Suggests:	7zip
 Suggests:	unzip
+
+BuildSystem:	cmake
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %description
 Ark is a program for managing various archive formats within the KDE
@@ -72,21 +75,3 @@ environment.
 %{_datadir}/kconf_update/ark.upd
 %{_datadir}/kconf_update/ark_add_hamburgermenu_to_toolbar.sh
 %{_libdir}/libkerfuffle.so*
-
-#----------------------------------------------------------------------
-
-%prep
-%autosetup -p1 -n ark-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DBUILD_QCH:BOOL=ON \
-	-DBUILD_WITH_QT6:BOOL=ON \
-	-DQT_MAJOR_VERSION=6 \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja_build -C build
-
-%install
-%ninja_install -C build
-%find_lang ark --with-man --with-html
