@@ -5,7 +5,7 @@
 
 Summary:	Handle file archives
 Name:		ark
-Version:	25.04.3
+Version:	25.08.0
 Release:	%{?git:0.%{git}.}1
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
@@ -72,6 +72,4 @@ environment.
 %{_datadir}/icons/*/*/apps/ark.*
 %{_mandir}/man1/ark.1*
 %{_sysconfdir}/xdg/arkrc
-%{_datadir}/kconf_update/ark.upd
-%{_datadir}/kconf_update/ark_add_hamburgermenu_to_toolbar.sh
 %{_libdir}/libkerfuffle.so*
