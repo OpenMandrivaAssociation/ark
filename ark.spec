@@ -6,7 +6,7 @@
 Summary:	Handle file archives
 Name:		ark
 Version:	25.08.3
-Release:	%{?git:0.%{git}.}1
+Release:	%{?git:0.%{git}.}2
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://utils.kde.org/projects/ark
@@ -54,6 +54,8 @@ Suggests:	unzip
 
 BuildSystem:	cmake
 BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+
+%rename plasma6-ark
 
 %description
 Ark is a program for managing various archive formats within the KDE
