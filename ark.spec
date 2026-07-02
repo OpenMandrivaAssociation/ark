@@ -5,7 +5,7 @@
 
 Summary:	Handle file archives
 Name:		ark
-Version:	26.04.2
+Version:	26.04.3
 Release:	%{?git:0.%{git}.}1
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
