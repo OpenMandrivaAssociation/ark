@@ -5,7 +5,7 @@
 
 Summary:	Handle file archives
 Name:		ark
-Version:	26.04.3
+Version:	26.08.0
 Release:	%{?git:0.%{git}.}1
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
@@ -53,6 +53,7 @@ Suggests:	7zip
 Suggests:	unzip
 
 BuildSystem:	cmake
+BuildOption:	-DBUILD_PYTHON_BINDINGS:BOOL=OFF
 BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %rename plasma6-ark
@@ -74,4 +75,6 @@ environment.
 %{_datadir}/icons/*/*/apps/ark.*
 %{_mandir}/man1/ark.1*
 %{_sysconfdir}/xdg/arkrc
+%{_datadir}/kconf_update/ark_move_dirhistory_to_state_config.py
+%{_datadir}/kconf_update/ark_move_dirhistory_to_state_config.upd
 %{_libdir}/libkerfuffle.so*
